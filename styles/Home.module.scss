@@ -1,0 +1,280 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 6rem auto;
+  width: 100%;
+  padding: 2rem 5rem;
+  max-width: 1400px;
+  flex-wrap: wrap;
+}
+
+.boxContainer .boxItem {
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+.boxContainer .boxItem h1 {
+  margin: 0 0 1rem 0;
+}
+
+.boxContainer .boxItem .portfolioImage {
+  width: 100%;
+  min-width: 380px;
+  border-radius: 6px;
+  box-shadow: 0 0 4px #bbb;
+}
+
+.boxContainer .boxItem .portfolioAppVideo {
+  width: 300px;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0 0 4px #bbb;
+  margin: auto;
+  display: block;
+}
+
+.portfolioTechs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.portfolioTechs a {
+  border-radius: 6px;
+  background-color: #fff;
+  border: solid 1px var(--purple-color-opacity);
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  margin: 0.5rem 1rem 0.5rem 0;
+  transition: 0.3s;
+
+  span {
+    font-size: 0.9em;
+  }
+  img {
+    width: 20px;
+    margin: auto 0.5rem auto auto;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  z-index: -1;
+  right: -100px;
+  width: 1000px;
+}
+
+.footer {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px 12px;
+  box-sizing: border-box;
+}
+
+.arrowDown {
+  animation: upAndDownAnimation alternate infinite 1s;
+}
+
+.socialLinks {
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialLinks a {
+  transition: 0.3s;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.2);
+}
+
+.socialLinks img {
+  height: 32px;
+  margin: 8px 16px;
+}
+
+@keyframes upAndDownAnimation {
+  0% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+.footer img {
+  margin-left: 0.5rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title a {
+  color: var(--purple-color);
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0 0 80px 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.logo {
+  height: 1em;
+}
+
+.info {
+  padding: 0 2rem;
+}
+
+.info p {
+  font-size: 3rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.emphasis {
+  color: #4e2ce4;
+  font-weight: 700;
+}
+
+.portfolio {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.portfolio .title {
+  padding: 0.75rem 0;
+  text-align: center;
+  font-size: 2.6rem;
+  margin: 0 0 40px;
+}
+
+.btnList {
+  margin: 0.5rem auto;
+}
+
+.btnList > :first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 1024px) {
+  .boxContainer {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 3.4rem;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .boxContainer {
+    margin: 2rem auto 4rem auto;
+    flex-direction: column;
+  }
+  .boxContainer .boxItem {
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  .portfolioTechs {
+    justify-content: center;
+  }
+  .boxContainer .boxItem .portfolioImage {
+    min-width: 280px;
+  }
+  .boxContainer .boxItem .portfolioAppVideo {
+    margin: auto;
+  }
+  .portfolio .title {
+    font-size: 2.2rem;
+  }
+  .boxContainer .boxItem h1 {
+    font-size: 1.8rem;
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .boxContainer .boxItem .portfolioImage {
+    flex: 1;
+    min-width: 100%;
+  }
+  .boxContainer .boxItem .portfolioAppVideo {
+    margin: auto;
+    width: 90%;
+  }
+}
