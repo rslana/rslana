@@ -7,6 +7,7 @@ body {
   font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -19,6 +20,16 @@ a {
 }
 
 :root {
-  --purple-color:#033cd8;
+  --purple-color:#1106b4;
   --purple-color-opacity:#033cd821;
+}
+
+.gradient-left {
+  stop-color: #150338;
+  stop-opacity: 1;
+}
+
+.gradient-right {
+  stop-color: #9e4fdf;
+  stop-opacity: 1;
 }
