@@ -23,6 +23,10 @@ $background-image: url(/images/nature.jpg);
   background: #fff;
   position: relative;
   min-height: 100vh;
+  * {
+    z-index: 1;
+  }
+
   svg {
     position: absolute;
     bottom: 0;
@@ -122,6 +126,13 @@ $background-image: url(/images/nature.jpg);
   box-shadow: 0 0 4px #bbb;
   margin: auto;
   display: block;
+}
+
+.metaInfo {
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--purple-color);
+  opacity: 0.8;
 }
 
 .portfolioTechs {

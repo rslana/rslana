@@ -125,6 +125,7 @@ export default function Home() {
               src={"/potfolio/cartesi/cartesi.png"}
               alt="Website Cartesi.io"
               className={styles.portfolioImage}
+              loading="lazy"
             />
           </div>
           <div className={styles.boxItem}>
@@ -133,6 +134,7 @@ export default function Home() {
               I developed and maintained some specific pages of the website
               using Gatsby.js and sass. This is a private project.
             </p>
+            <p className={styles.metaInfo}>JUN/2020 - JAN/2021</p>
             <div className={styles.portfolioTechs}>
               <ExternalLink href="https://reactjs.org/">
                 <img src={"/icons/tech/react.svg"} alt="React" />{" "}
@@ -173,6 +175,7 @@ export default function Home() {
               src={"/potfolio/spotify-clone/screen-02.jpg"}
               alt="Spotify Clone - by rslana.dev"
               className={styles.portfolioImage}
+              loading="lazy"
             />
           </div>
           <div className={styles.boxItem}>
