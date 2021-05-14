@@ -74,18 +74,41 @@ $background-image: url(/images/nature.jpg);
     flex: 1;
     background: #fff;
     border-radius: 6px;
-    box-shadow: 2px 2px 6px #10014e2c;
-    padding: 32px;
+    padding: 1rem 2rem;
     margin: 16px;
     min-width: 340px;
-
-    @media (min-width: 480px) {
-      transform: translateY(var(--negative-scroll));
+    transition: transform 100ms;
+    h2 {
+      margin: 1rem auto;
     }
+
+    &:hover {
+      transition: 300ms;
+      box-shadow: 0px 0px 4px #10014e2c;
+    }
+
     @media (max-width: 480px) {
+      box-shadow: 0px 0px 4px #10014e2c;
       min-width: 96%;
       h2 {
         font-size: 5.5vw;
+      }
+      p {
+        font-size: 3.8vw;
+      }
+    }
+
+    .metaInfo::before {
+      content: " • ";
+      margin: 0 0.125rem;
+    }
+
+    @media (max-width: 1160px) {
+      .metaInfo {
+        display: block;
+      }
+      .metaInfo::before {
+        display: none;
       }
     }
   }
@@ -100,6 +123,13 @@ $background-image: url(/images/nature.jpg);
   padding: 2rem 5rem;
   max-width: 1400px;
   flex-wrap: wrap;
+  overflow: hidden;
+
+  &.flexReverse {
+    @media (max-width: 720px) {
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 .boxContainer .boxItem {
@@ -120,7 +150,7 @@ $background-image: url(/images/nature.jpg);
 }
 
 .boxContainer .boxItem .portfolioAppVideo {
-  width: 300px;
+  width: 280px;
   border-radius: 6px;
   outline: none;
   box-shadow: 0 0 4px #bbb;
@@ -131,14 +161,14 @@ $background-image: url(/images/nature.jpg);
 .metaInfo {
   font-size: 0.75em;
   font-weight: 600;
-  color: var(--purple-color);
-  opacity: 0.8;
+  color: var(--purple-color-lighter);
 }
 
 .portfolioTechs {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 0.75rem;
 }
 
 .portfolioTechs a {
@@ -178,7 +208,7 @@ $background-image: url(/images/nature.jpg);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 32px 12px;
+  padding: 2rem 1.5rem 3.5rem 1.5rem;
   box-sizing: border-box;
 }
 
@@ -253,6 +283,7 @@ $background-image: url(/images/nature.jpg);
   line-height: 1.15;
   font-size: 4rem;
   animation: showUp 1s;
+  transition: transform 100ms;
   &.titleScroll {
     transform: translateY(var(--positive-scroll));
   }
@@ -341,13 +372,33 @@ $background-image: url(/images/nature.jpg);
 }
 
 .link {
+  position: relative;
+  display: inline-block;
+  vertical-align: sub;
+  margin: 0;
   color: var(--purple-color);
-  // font-weight: 600;
-  border-bottom: var(--purple-color) dashed 1px;
-  transition: 0.3s;
+  padding: 0 0.1rem;
+  overflow: hidden;
+  font-weight: 600;
+  letter-spacing: -0.03rem;
+
+  &::before {
+    content: "";
+    background-color: var(--purple-color-opacity-secondary);
+    width: 110%;
+    height: 0.4rem;
+    position: absolute;
+    bottom: 0.2rem;
+    transform: translate(-110%);
+  }
+
   &:hover {
+    &::before {
+      transition: 300ms transform;
+      transform: translate(-4px);
+    }
     // text-shadow: 1px 1px 8px #473885;
-    border-bottom: var(--purple-color) solid 1px;
+    // border-bottom: var(--purple-color) solid 1px;
   }
 }
 
@@ -367,9 +418,13 @@ $background-image: url(/images/nature.jpg);
   }
 
   p {
-    font-family: "Shadows Into Light", cursive;
     line-height: 1em;
   }
+}
+
+.specialFont {
+  line-height: 1em;
+  font-family: "Shadows Into Light", cursive;
 }
 
 @media (max-width: 1024px) {

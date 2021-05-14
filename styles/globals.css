@@ -21,7 +21,9 @@ a {
 
 :root {
   --purple-color:#1106b4;
+  --purple-color-lighter: #5a51e2;
   --purple-color-opacity:#033cd821;
+  --purple-color-opacity-secondary:#1106b445;
 }
 
 .gradient-left {

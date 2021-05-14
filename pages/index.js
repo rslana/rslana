@@ -5,23 +5,11 @@ import ExternalLink from "../src/components/layout/ExternalLink";
 import styles from "../styles/Home.module.scss";
 import { FaGithub, FaLink } from "react-icons/fa";
 import Wave from "../src/components/svgs/Wave";
+import useAnimation from "../src/hooks/useAnimation";
 
 export default function Home() {
   useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        document.body.style.setProperty(
-          "--negative-scroll",
-          `-${window.pageYOffset / 6}px`
-        );
-        document.body.style.setProperty(
-          "--positive-scroll",
-          `${window.pageYOffset / 7}px`
-        );
-      },
-      false
-    );
+    useAnimation();
   }, []);
 
   return (
@@ -32,7 +20,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={`${styles.title} ${styles.titleScroll}`}>rslana.dev</h1>
+        <h1 className={styles.title}>rslana.dev</h1>
         <div className={styles.info}>
           <div style={{ marginBottom: "30px" }}>
             <p>
@@ -64,13 +52,26 @@ export default function Home() {
         <div className={styles.infoCard}>
           <h2>About me</h2>
           <p>
+            Front-end React Developer at{" "}
+            <ExternalLink
+              href="https://www.jobsity.com"
+              className={styles.link}
+            >
+              Jobsity
+            </ExternalLink>{" "}
+            <span className={styles.metaInfo}>MAY/2021 - NOW</span>
+          </p>
+          <p>
             Software Engineer Trainee at{" "}
             <ExternalLink href="https://levty.com/br" className={styles.link}>
               LEVTY
-            </ExternalLink>
-            , 2020 - now.
+            </ExternalLink>{" "}
+            <span className={styles.metaInfo}>JAN/2020 - MAY/2021</span>
           </p>
-          <p>BS in Information Systems, 2016 - 2021 (expected).</p>
+          <p>
+            BS in Information Systems{" "}
+            <span className={styles.metaInfo}>2016 - 2021 (expected).</span>
+          </p>
         </div>
         <div className={styles.infoCard}>
           <h2>
@@ -126,11 +127,12 @@ export default function Home() {
               alt="Website Cartesi.io"
               className={styles.portfolioImage}
               loading="lazy"
+              data-animation="fade-up"
             />
           </div>
           <div className={styles.boxItem}>
-            <h1>Website cartesi.io</h1>
-            <p>
+            <h1 data-animation="fade-left">Website cartesi.io</h1>
+            <p data-animation="fade-up">
               I developed and maintained some specific pages of the website
               using Gatsby.js and sass. This is a private project.
             </p>
@@ -176,11 +178,12 @@ export default function Home() {
               alt="Spotify Clone - by rslana.dev"
               className={styles.portfolioImage}
               loading="lazy"
+              data-animation="fade-up"
             />
           </div>
           <div className={styles.boxItem}>
-            <h1>Spotify Clone</h1>
-            <p>
+            <h1 data-animation="fade-left">Spotify Clone</h1>
+            <p data-animation="fade-up">
               A UI clone from Spotify Web. This is a project focused on the main
               UI functionalities, the player starts with a fixed amount of songs
               and playlists, the images and the name of the albums, songs,
@@ -218,10 +221,10 @@ export default function Home() {
         </div>
 
         {/* JF Bus */}
-        <div className={styles.boxContainer}>
+        <div className={[styles.boxContainer, styles.flexReverse].join(" ")}>
           <div className={styles.boxItem}>
-            <h1>JF Bus</h1>
-            <p>
+            <h1 data-animation="fade-right">JF Bus</h1>
+            <p data-animation="fade-up">
               I developed a mobile App with bus schedules from Juiz de Fora -
               MG, Brasil and a crawler to get the bus schedules from city hall
               website.
@@ -262,6 +265,7 @@ export default function Home() {
               muted
               loop
               className={styles.portfolioAppVideo}
+              data-animation="fade-up"
             >
               <source src="/potfolio/busjf/busjf-01.mp4" type="video/mp4" />
               <source src="/potfolio/busjf/busjf-01.mp4" type="video/ogg" />
@@ -273,7 +277,7 @@ export default function Home() {
 
       <a className={styles.infinite} href="#home">
         <h2>rslana.dev</h2>
-        <p>We are infinite</p>
+        <p className={styles.specialFont}>We are infinite</p>
       </a>
 
       <footer className={styles.footer}>
@@ -290,6 +294,9 @@ export default function Home() {
           </ExternalLink>
         </div>
         <p>Copyright &copy; {new Date().getUTCFullYear()}, Rafael</p>
+        <span className={styles.specialFont}>
+          Start before you think you're ready
+        </span>
       </footer>
     </div>
   );

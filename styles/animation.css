@@ -1,0 +1,74 @@
+._hidden {
+  opacity: 0;
+  transform: translateY(25%);
+}
+
+/* FADE */
+._animate[data-animation='fade'] {
+  animation: fade 800ms ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* FADE UP */
+._animate[data-animation='fade-up'] {
+  animation: fade-up 800ms ease-in-out;
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* FADE LEFT */
+._animate[data-animation='fade-left'] {
+  animation: fade-left 500ms ease;
+}
+
+._animate[data-animation='fade-left-x1'] {
+  animation: fade-left 1000ms ease;
+}
+
+@keyframes fade-left {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* FADE RIGHT */
+._animate[data-animation='fade-right'] {
+  animation: fade-right 500ms ease;
+}
+
+._animate[data-animation='fade-right-x1'] {
+  animation: fade-right 1000ms ease;
+}
+
+@keyframes fade-right {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
