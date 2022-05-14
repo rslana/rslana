@@ -78,8 +78,26 @@ $background-image: url(/images/nature.jpg);
     margin: 16px;
     min-width: 340px;
     transition: transform 100ms;
+
+    p {
+      margin: 0.75rem 1rem;
+      &:last-of-type {
+        margin-bottom: 1rem;
+      }
+    }
+
     h2 {
       margin: 1rem auto;
+    }
+
+    h3 {
+      margin: 0rem auto;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: var(--purple-color-lighter);
+      background: var(--purple-color-opacity);
+      display: inline-block;
     }
 
     &:hover {
@@ -168,7 +186,9 @@ $background-image: url(/images/nature.jpg);
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
 }
 
 .portfolioTechs a {
@@ -179,7 +199,7 @@ $background-image: url(/images/nature.jpg);
   display: flex;
   justify-content: center;
   align-items: center !important;
-  margin: 0.5rem 1rem 0.5rem 0;
+  // margin: 0.25rem 0.5rem 0.25rem 0;
   transition: 0.3s;
 
   span {
@@ -214,7 +234,11 @@ $background-image: url(/images/nature.jpg);
 
 .arrowDown {
   animation: upAndDownAnimation alternate infinite 1s;
-  margin: 20px 0 80px 0;
+  margin: 0 0 80px 0;
+  background-color: #fff;
+  padding: 1.5rem 0.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 5px 10px var(--purple-color-opacity-secondary);
 }
 
 .socialLinks {
@@ -222,6 +246,7 @@ $background-image: url(/images/nature.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .socialLinks a {
@@ -234,7 +259,7 @@ $background-image: url(/images/nature.jpg);
 
 .socialLinks img {
   height: 32px;
-  margin: 8px 16px;
+  margin: 0.5rem;
 }
 
 @keyframes upAndDownAnimation {
@@ -244,10 +269,6 @@ $background-image: url(/images/nature.jpg);
   100% {
     transform: translateY(0.5rem);
   }
-}
-
-.footer img {
-  margin-left: 0.5rem;
 }
 
 .footer a {
@@ -333,15 +354,27 @@ $background-image: url(/images/nature.jpg);
 
 .info {
   padding: 0 2rem;
-}
-
-.info p {
-  font-size: 3rem;
-  margin: 0;
   text-align: center;
 
-  @media (max-width: 480px) {
-    font-size: 10vw;
+  > div:first-of-type {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+
+    @media (max-width: 480px) {
+      font-size: 10vw;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    @media (max-width: 480px) {
+      font-size: 6vw;
+    }
   }
 }
 
@@ -361,6 +394,10 @@ $background-image: url(/images/nature.jpg);
   text-align: center;
   font-size: 2.6rem;
   margin: 0 0 40px;
+
+  span {
+    color: #720de6;
+  }
 }
 
 .btnList {
@@ -372,33 +409,17 @@ $background-image: url(/images/nature.jpg);
 }
 
 .link {
-  position: relative;
-  display: inline-block;
-  vertical-align: sub;
   margin: 0;
-  color: var(--purple-color);
+  color: var(--purple-color-lighter);
   padding: 0 0.1rem;
   overflow: hidden;
   font-weight: 600;
   letter-spacing: -0.03rem;
-
-  &::before {
-    content: "";
-    background-color: var(--purple-color-opacity-secondary);
-    width: 110%;
-    height: 0.4rem;
-    position: absolute;
-    bottom: 0.2rem;
-    transform: translate(-110%);
-  }
+  transition: 200ms;
+  cursor: pointer;
 
   &:hover {
-    &::before {
-      transition: 300ms transform;
-      transform: translate(-4px);
-    }
-    // text-shadow: 1px 1px 8px #473885;
-    // border-bottom: var(--purple-color) solid 1px;
+    background-color: var(--purple-color-opacity);
   }
 }
 

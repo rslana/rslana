@@ -1,24 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700;900&display=swap');
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 :root {
   --purple-color:#1106b4;
   --purple-color-lighter: #5a51e2;
@@ -35,3 +16,10 @@ a {
   stop-color: #9e4fdf;
   stop-opacity: 1;
 }
+
+.text-gradient-primary {
+  background: -webkit-linear-gradient(360deg, #720de6, #150338);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

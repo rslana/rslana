@@ -1,32 +1,33 @@
-import { useEffect } from "react";
 import Head from "next/head";
-import Button from "../src/components/layout/Button";
-import ExternalLink from "../src/components/layout/ExternalLink";
+import Link from "next/link";
+import { Button } from "../src/components/Button";
+import { Title } from "../src/components/Title";
+import ExternalLink from "../src/components/ExternalLink";
 import styles from "../styles/Home.module.scss";
 import { FaGithub, FaLink } from "react-icons/fa";
 import Wave from "../src/components/svgs/Wave";
-import useAnimation from "../src/hooks/useAnimation";
 
 export default function Home() {
-  useEffect(() => {
-    useAnimation();
-  }, []);
-
   return (
     <div className={styles.container} id="home">
       <Head>
-        <title>Home</title>
+        <title>rslana.dev</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>rslana.dev</h1>
+        <Title gradient="primary">rslana.dev</Title>
         <div className={styles.info}>
-          <div style={{ marginBottom: "30px" }}>
-            <p>
-              Hello, I'm <span className={styles.emphasis}>Rafael</span>
-            </p>
-            <p>A Front-end developer, from Brazil</p>
+          <div>
+            <h1>Hello, I&apos;m Rafael</h1>
+            <h2>A Software Developer from Brazil.</h2>
+            <h2>
+              I&apos;m passionate about{" "}
+              <span className={[styles.specialFont, styles.emphasis].join(" ")}>
+                Front-end
+              </span>{" "}
+              development.
+            </h2>
           </div>
           <div className={`${styles.portfolioTechs} ${styles.fluid}`}>
             <ExternalLink
@@ -51,60 +52,74 @@ export default function Home() {
       <div className={styles.infoCardList}>
         <div className={styles.infoCard}>
           <h2>About me</h2>
-          <p>
-            Front-end React Developer at{" "}
-            <ExternalLink
-              href="https://www.jobsity.com"
-              className={styles.link}
-            >
-              Jobsity
-            </ExternalLink>{" "}
-            <span className={styles.metaInfo}>MAY/2021 - NOW</span>
-          </p>
-          <p>
-            Software Engineer Trainee at{" "}
-            <ExternalLink href="https://levty.com/br" className={styles.link}>
-              LEVTY
-            </ExternalLink>{" "}
-            <span className={styles.metaInfo}>JAN/2020 - MAY/2021</span>
-          </p>
-          <p>
-            BS in Information Systems{" "}
-            <span className={styles.metaInfo}>2016 - 2021 (expected).</span>
-          </p>
+          <div>
+            <h3>Experience</h3>
+            <p>
+              Front-end Developer at{" "}
+              <ExternalLink
+                href="https://www.jobsity.com"
+                className={styles.link}
+              >
+                Jobsity
+              </ExternalLink>{" "}
+              <span className={styles.metaInfo}>MAY/2021 - NOW</span>
+            </p>
+            <p>
+              Full-stack Developer{" "}
+              <Link href="/" passHref>
+                <span className={styles.link}>Freelance part-time</span>
+              </Link>{" "}
+              <span className={styles.metaInfo}>JUN/2020 - NOW</span>
+            </p>
+            <p>
+              Software Engineer Trainee at{" "}
+              <ExternalLink href="https://levty.com/br" className={styles.link}>
+                LEVTY
+              </ExternalLink>{" "}
+              <span className={styles.metaInfo}>JAN/2020 - MAY/2021</span>
+            </p>
+          </div>
+          <div>
+            <h3>Education</h3>
+            <p>
+              BS in Information Systems &bull;{" "}
+              <ExternalLink
+                href="https://www.ifsudestemg.edu.br/juizdefora"
+                className={styles.link}
+              >
+                IF Sudeste MG
+              </ExternalLink>{" "}
+              <span className={styles.metaInfo}>2016 - 2021</span>
+            </p>
+          </div>
         </div>
         <div className={styles.infoCard}>
           <h2>
             Stack of{" "}
             <span className={styles.emphasis}>languages/technologies</span>
           </h2>
+          <h3>Currently working with</h3>
           <div className={`${styles.portfolioTechs} ${styles.fluid}`}>
-            <ExternalLink href="https://www.javascript.com/">
-              <img src={"/icons/tech/javascript.svg"} alt="JavaScript" />{" "}
-              <span>JavaScript</span>
+            <ExternalLink href="https://www.typescriptlang.org/">
+              <img src={"/icons/tech/typescript.svg"} alt="Typescript" />{" "}
+              <span>Typescript</span>
             </ExternalLink>
             <ExternalLink href="https://reactjs.org/">
               <img src={"/icons/tech/react.svg"} alt="React" />{" "}
               <span>React</span>
             </ExternalLink>
+            <ExternalLink href="https://react-query.tanstack.com/">
+              <img src={"/icons/tech/react-query.svg"} alt="React Query" />{" "}
+              <span>React Query</span>
+            </ExternalLink>
+
             <ExternalLink href="https://nodejs.org">
               <img src={"/icons/tech/nodejs.svg"} alt="Node.js" />{" "}
               <span>Node.js</span>
             </ExternalLink>
-            <ExternalLink href="https://www.typescriptlang.org/">
-              <img src={"/icons/tech/typescript.svg"} alt="Typescript" />{" "}
-              <span>Typescript</span>
-            </ExternalLink>
-            <ExternalLink href="https://www.gatsbyjs.com/">
-              <img src={"/icons/tech/gatsby.png"} alt="Gatsby" />{" "}
-              <span>Gatsby</span>
-            </ExternalLink>
-            <ExternalLink href="https://redux.js.org/">
-              <img src={"/icons/tech/redux.png"} alt="Redux" />{" "}
-              <span>Redux</span>
-            </ExternalLink>
-            <ExternalLink href="https://sass-lang.com/">
-              <img src={"/icons/tech/sass.png"} alt="Sass" /> <span>Sass</span>
+            <ExternalLink href="https://nextjs.org/">
+              <img src={"/icons/tech/nextjs.svg"} alt="Next.js" />{" "}
+              <span>Next.js</span>
             </ExternalLink>
             <ExternalLink href="https://styled-components.com/">
               <img
@@ -113,12 +128,33 @@ export default function Home() {
               />{" "}
               <span>styled components</span>
             </ExternalLink>
+            <ExternalLink href="https://storybook.js.org/">
+              <img src={"/icons/tech/storybook.png"} alt="Storybook" />{" "}
+              <span>Storybook</span>
+            </ExternalLink>
+          </div>
+          <h3>Already worked with</h3>
+          <div className={`${styles.portfolioTechs} ${styles.fluid}`}>
+            <ExternalLink href="https://redux.js.org/">
+              <img src={"/icons/tech/redux.png"} alt="Redux" />{" "}
+              <span>Redux</span>
+            </ExternalLink>
+            <ExternalLink href="https://sass-lang.com/">
+              <img src={"/icons/tech/sass.png"} alt="Sass" />
+              <span>Sass</span>
+            </ExternalLink>
+            <ExternalLink href="https://www.gatsbyjs.com/">
+              <img src={"/icons/tech/gatsby.png"} alt="Gatsby" />{" "}
+              <span>Gatsby</span>
+            </ExternalLink>
           </div>
         </div>
       </div>
 
       <div className={styles.portfolio}>
-        <h1 className={styles.title}>Projects as a freelancer</h1>
+        <h1 className={styles.title}>
+          Projects as a <span className={styles.specialFont}>freelancer</span>
+        </h1>
         {/* Cartesi.io */}
         <div className={styles.boxContainer}>
           <div className={styles.boxItem}>
@@ -152,23 +188,25 @@ export default function Home() {
               </ExternalLink>
             </div>
             <div className={styles.btnList}>
-              <Button>
-                <ExternalLink href="https://cartesi.io/">
+              <ExternalLink href="https://cartesi.io/">
+                <Button>
                   <FaLink />
                   &nbsp; Live Demo
-                </ExternalLink>
-              </Button>
-              <Button>
-                <ExternalLink href="https://github.com/cartesi">
+                </Button>
+              </ExternalLink>
+              <ExternalLink href="https://github.com/cartesi">
+                <Button>
                   <FaGithub />
                   &nbsp; Github
-                </ExternalLink>
-              </Button>
+                </Button>
+              </ExternalLink>
             </div>
           </div>
         </div>
 
-        <h1 className={styles.title}>Personal Projects</h1>
+        <h1 className={styles.title}>
+          <span className={styles.specialFont}>Personal</span> Projects
+        </h1>
 
         {/* Spotify Clone */}
         <div className={styles.boxContainer}>
@@ -204,18 +242,18 @@ export default function Home() {
               </ExternalLink>
             </div>
             <div className={styles.btnList}>
-              <Button>
-                <ExternalLink href="https://spotify.rslana.dev/">
+              <ExternalLink href="https://spotify.rslana.dev/">
+                <Button>
                   <FaLink />
                   &nbsp; Live Demo
-                </ExternalLink>
-              </Button>
-              <Button>
-                <ExternalLink href="https://github.com/rslana/spotify-clone">
+                </Button>
+              </ExternalLink>
+              <ExternalLink href="https://github.com/rslana/spotify-clone">
+                <Button>
                   <FaGithub />
                   &nbsp; Source
-                </ExternalLink>
-              </Button>
+                </Button>
+              </ExternalLink>
             </div>
           </div>
         </div>
@@ -244,18 +282,18 @@ export default function Home() {
               </ExternalLink>
             </div>
             <div className={styles.btnList}>
-              <Button>
-                <ExternalLink href="https://github.com/rslana/app-aeoz">
+              <ExternalLink href="https://github.com/rslana/app-aeoz">
+                <Button>
                   <FaGithub />
                   &nbsp; App Source
-                </ExternalLink>
-              </Button>
-              <Button>
-                <ExternalLink href="https://github.com/rslana/api-jfbus">
+                </Button>
+              </ExternalLink>
+              <ExternalLink href="https://github.com/rslana/api-jfbus">
+                <Button>
                   <FaGithub />
                   &nbsp; Api Source
-                </ExternalLink>
-              </Button>
+                </Button>
+              </ExternalLink>
             </div>
           </div>
           <div className={styles.boxItem}>
@@ -295,7 +333,7 @@ export default function Home() {
         </div>
         <p>Copyright &copy; {new Date().getUTCFullYear()}, Rafael</p>
         <span className={styles.specialFont}>
-          Start before you think you're ready
+          Start before you think you&apos;re ready
         </span>
       </footer>
     </div>

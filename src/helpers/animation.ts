@@ -1,4 +1,4 @@
-export default function animate(element: HTMLElement, offset = 150) {
+export function animate(element: HTMLElement | Element, offset = 150) {
   const elementHeight = element.clientHeight;
 
   document.addEventListener("scroll", animate);
@@ -30,4 +30,14 @@ export default function animate(element: HTMLElement, offset = 150) {
       }
     }
   }
+}
+
+export function initGlobalAnimation() {
+  document.querySelectorAll("*[data-animation]").forEach((element) => {
+    animate(element, getOffsetSize(element.scrollHeight, 50));
+  });
+}
+
+function getOffsetSize(size: number, percentage: number) {
+  return size * (percentage / 100);
 }
