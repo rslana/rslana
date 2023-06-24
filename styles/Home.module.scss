@@ -56,7 +56,7 @@ $background-image: url(/images/nature.jpg);
   margin-top: -80px;
   width: 100%;
   justify-content: center;
-  padding: 0 72px;
+  padding: 0 2rem;
   max-width: 1400px;
   z-index: 2;
 
@@ -136,7 +136,7 @@ $background-image: url(/images/nature.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto 6rem auto;
+  margin: 2rem auto 8rem auto;
   width: 100%;
   padding: 2rem 5rem;
   max-width: 1400px;
@@ -148,32 +148,54 @@ $background-image: url(/images/nature.jpg);
       flex-direction: column-reverse;
     }
   }
+
+  .techGroupContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--purple-color-opacity);
+    padding: 1.5rem 2rem;
+    gap: 2rem 5rem;
+    border-radius: 6px;
+    align-items: center;
+    box-shadow: 0 0 4px #bbb;
+    
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .boxContainer .boxItem {
   padding: 0.5rem 1.5rem;
   width: 100%;
   flex: 1;
-}
 
-.boxContainer .boxItem h1 {
-  margin: 0 0 1rem 0;
-}
+  .boxItemDescription {
+    a {
+      text-decoration: underline;
+    }
+  }
+  
 
-.boxContainer .boxItem .portfolioImage {
-  width: 100%;
-  min-width: 380px;
-  border-radius: 6px;
-  box-shadow: 0 0 4px #bbb;
-}
+  h1 {
+    margin: 0 0 1rem 0;
+  }
 
-.boxContainer .boxItem .portfolioAppVideo {
-  width: 280px;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: 0 0 4px #bbb;
-  margin: auto;
-  display: block;
+  .portfolioImage {
+    width: 100%;
+    min-width: 380px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px #bbb;
+  }
+
+  .portfolioAppVideo {
+    width: 280px;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: 0 0 4px #bbb;
+    margin: auto;
+    display: block;
+  }
 }
 
 .metaInfo {
@@ -305,9 +327,6 @@ $background-image: url(/images/nature.jpg);
   font-size: 4rem;
   animation: showUp 1s;
   transition: transform 100ms;
-  &.titleScroll {
-    transform: translateY(var(--positive-scroll));
-  }
 }
 
 .title,

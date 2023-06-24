@@ -4,7 +4,7 @@ import { useTypeWriter } from "../src/hooks/use-type-writer";
 import { useCallback, useRef, useState } from "react";
 
 export default function Home() {
-  const titleRef = useRef<any>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState(false);

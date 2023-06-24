@@ -62,6 +62,10 @@
   animation: fade-right 1000ms ease;
 }
 
+._animate[data-animation='fade-right-x2'] {
+  animation: fade-right 1500ms ease;
+}
+
 @keyframes fade-right {
   from {
     transform: translateX(-25%);
